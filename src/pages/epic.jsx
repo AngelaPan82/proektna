@@ -90,7 +90,6 @@ export const Epic = () => {
           {photoList.map((pd, key) => (
             <Button variant={ key!==ndx ? 'light' : 'primary'} style={{ padding: '0.4em' }} onClick={() => historyPush(year,month,day,key)} id={key}>
               <Image src={photoUri('thumbs',key)} style={{ maxWidth: '60px' }} rounded />
-              {/* <Image src={'https://epic.gsfc.nasa.gov/archive/natural/' + year + '/' + month + '/' + day + '/thumbs/epic_1b_' + pd.identifier + '.jpg'} style={{ maxWidth: '60px' }} rounded /> */}
             </Button>
           ))}
         </Col>
@@ -98,7 +97,7 @@ export const Epic = () => {
         <Row style={{ paddingTop: '1em' }}>
           <Col>
             <Button onClick={() => window.open(photoUri('png',ndx), '_blank')} variant="light" style={{ padding: '0.4em' }}>
-              <img src={photoUri('jpg',ndx)} alt='Photo...' />
+              <Image src={photoUri('jpg',ndx)} alt='Photo...' />
             </Button>
           </Col>
         </Row>
