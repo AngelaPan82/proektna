@@ -25,7 +25,7 @@ export const Epic = () => {
   };
 
   useEffect(() => {
-    axios.get(`https://api.nasa.gov/EPIC/api/natural/available?api_key=14kQ7Rt7juZFOot4zYe0Tacjt0Z7s66H3MjEbdRU`)
+    axios.get(`https://api.nasa.gov/EPIC/api/natural/available?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`)
       .then(res => {
         setEpicDayList(res.data);
       }); 
@@ -36,7 +36,7 @@ export const Epic = () => {
   }, [year, month, epicDayList]);
 
   useEffect(() => {
-    axios.get('https://api.nasa.gov/EPIC/api/natural/date/' + year + '-' + month + '-' + day + '?api_key=14kQ7Rt7juZFOot4zYe0Tacjt0Z7s66H3MjEbdRU')
+    axios.get('https://api.nasa.gov/EPIC/api/natural/date/' + year + '-' + month + '-' + day + '?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG')
       .then(res => {
         setPhotoList(res.data);
       });

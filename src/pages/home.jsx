@@ -12,14 +12,14 @@ const axParam = {
 const axi = axios.create(axParam);
   
 export const Home = () =>{
-	const [rdm, setRdm] = useState('Read-me.md');
-	
+	const [ homeTekst, setHomeTekst ] = useState('Read-me.md');
+
 	useEffect(() => {
 
 		axi.get()
-    		.then((response) => { 
-      		setRdm(response.data);
-    	})
+    		.then((resp) => { 
+				setHomeTekst(resp.data);
+    		})
     	.catch((error) => {
         	console.warn(error);
     	});
@@ -29,7 +29,7 @@ export const Home = () =>{
 	return(
 		<Container style={{marginTop:"1.5em"}}>
 			<div>
-				<ReactMarkdown source={rdm} />
+				<ReactMarkdown source={homeTekst} />
 			</div> 
 		</Container>
 	)
