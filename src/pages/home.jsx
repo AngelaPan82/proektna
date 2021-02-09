@@ -4,12 +4,10 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 
 const axParam = {
-						// Link to Home.md on github repositories
-  baseURL: "https://raw.githubusercontent.com/ristep/proba02/main/Home.md",
-	headers: {
-		"Content-type": "application/text"
-	}
-};
+ 		// Link to Home.md on github repositories
+  baseURL: "https://raw.githubusercontent.com/AngelaPan82/proektna/main/Home.md",
+  headers: {"Content-type": "application/text"}
+}; 
 
 const axi = axios.create(axParam);
   
@@ -17,13 +15,15 @@ export const Home = () =>{
 	const [rdm, setRdm] = useState('Read-me.md');
 	
 	useEffect(() => {
+
 		axi.get()
-    .then((response) => { 
-      setRdm(response.data);
-    })
-    .catch((error) => {
-        console.warn(error);
-    });
+    		.then((response) => { 
+      		setRdm(response.data);
+    	})
+    	.catch((error) => {
+        	console.warn(error);
+    	});
+
 	},[]);
 
 	return(

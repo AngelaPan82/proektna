@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 
 const axParam = {
 						// Link to About.md on github repositories
-  baseURL: "https://raw.githubusercontent.com/ristep/proba02/main/About.md",
+  baseURL: "https://raw.githubusercontent.com/AngelaPan82/proektna/main/About.md",
 	headers: {
 		"Content-type": "application/text"
 	}
