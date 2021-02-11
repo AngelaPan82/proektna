@@ -4,8 +4,8 @@
 
 git init
 
-git pull git@github.com:AngelaPan82/proektna.git main 
+git pull git@github.com:AngelaPan82/proektna.git 
 
-git remote add main git@github.com:AngelaPan82/proektna.git   
+git remote add master git@github.com:AngelaPan82/proektna.git   
 
-git push --set-upstream main main 
+git push --set-upstream 
