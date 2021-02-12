@@ -1,4 +1,4 @@
-## Cloning and running project to lacal repository
+## Cloning and running project to a local repository
 
 ```sh
 git clone git@github.com:AngelaPan82/proektna.git <folder_name>
