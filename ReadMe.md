@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+## Cloning and running project to lacal repository
+
+```sh
+git clone git@github.com:AngelaPan82/proektna.git <folder_name>
+yarn
+yarn start
+```
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
