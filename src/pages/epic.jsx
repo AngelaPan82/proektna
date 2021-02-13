@@ -77,7 +77,7 @@ export const Epic = () => {
               </DropdownButton>
               <DropdownButton onSelect={(dd) => historyPush(year,month,dd,ndx)} as={ButtonGroup} title={"day - " + day} id="bg-nested-dropdown">
                 {filtList.map((dd, key) => (
-                  <Dropdown.Item id={key} eventKey={dd.substr(dd.length - 2)} >
+                  <Dropdown.Item eventKey={dd.substr(dd.length - 2)} id={key}>
                     {dd}
                   </Dropdown.Item>
                 ))}
