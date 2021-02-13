@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap";
+import Navbar from './elements/Navbar'
 
-import { NavLink } from "./elements/navlink";
+
 
 import { Home } from "./pages/home";
 import { About } from "./pages/about";
@@ -13,18 +13,19 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Navbar className="navbar-dark bg-primary" expand="lg">
+        <Navbar />
+        {/* <Navbar className="navbar-dark bg-primary" expand="lg">
           <Navbar.Brand>Test</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/apod">APOD</NavLink>
-              <NavLink to="/epic">EPIC</NavLink>
-              <NavLink to="/about">About</NavLink>
-            </Nav>
+            <Navbar className="mr-auto">
+              <Navbar to="/">Home</Navbar>
+              <Navbar to="/apod">APOD</Navbar>
+              <Navbar to="/epic">EPIC</Navbar>
+              <Navbar to="/about">About</Navbar>
+            </Navbar>
           </Navbar.Collapse>
-        </Navbar>
+        </Navbar> */}
 
         <Switch>
           <Route path="/about">

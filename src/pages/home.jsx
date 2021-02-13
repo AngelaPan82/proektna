@@ -9,7 +9,7 @@ const axParam = {
   headers: {"Content-type": "application/text"}
 }; 
 // dfsdfsdfsfd
-//dfdf 
+
 const axi = axios.create(axParam);
   
 export const Home = () =>{
