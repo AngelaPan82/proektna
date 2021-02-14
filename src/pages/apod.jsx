@@ -41,7 +41,7 @@ export const Apod = () => {
 
       { apodData.media_type === "image" ?
         <Card className="bg-dark text-white">
-          <Card.Img src={apodData.url} alt="Image loading .." />git 
+          <Card.Img src={apodData.url} alt="Image loading .." />
           <Card.ImgOverlay>
             <Card.Title>{apodData.title}</Card.Title>
             <Card.Text>
