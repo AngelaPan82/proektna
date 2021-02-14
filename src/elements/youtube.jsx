@@ -1,4 +1,4 @@
-export default ({ url }) => {
+const YouTube = ({ url, title }) => {
   return (
     <div
       className="video"
@@ -17,9 +17,12 @@ export default ({ url }) => {
           width: "100%",
           height: "100%",
         }}
+        title={title}
         src={url}
         frameBorder={0}
       />
     </div>
   );
 };
+
+export default YouTube;

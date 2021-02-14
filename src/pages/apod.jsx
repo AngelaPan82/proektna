@@ -53,7 +53,7 @@ export const Apod = () => {
         :
         <Card className="bg-dark text-white">
           <Card.Body style={{padding:"0"}}>
-            <Video url={apodData.url} />
+            <Video url={apodData.url} title={apodData.title}/>
           </Card.Body>
           <Card.Footer>
             <h5>Date: {apodData.date}</h5>
