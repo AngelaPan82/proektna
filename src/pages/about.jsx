@@ -4,7 +4,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 
 const axParam = {
-						// Link to About.md on github repositories
+					// Link to About.md on github repositories 
   baseURL: "https://raw.githubusercontent.com/AngelaPan82/proektna/main/About.md",
 	headers: {
 		"Content-type": "application/text"
@@ -28,9 +28,7 @@ export const About = () =>{
 
 	return(
 		<Container style={{marginTop:"1.5em"}}>
-			<div>
 				<ReactMarkdown source={rdm} />
-			</div> 
 		</Container>
 	)
 }
