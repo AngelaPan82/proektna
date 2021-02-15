@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/AngelaPan82/proektna)
+
 ## Cloning and running project to a local repository
 
 ```sh
