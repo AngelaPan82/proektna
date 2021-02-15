@@ -2,10 +2,13 @@ import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './elements/Navbar'
 
-import { Home } from "./pages/home";
+import Home from './pages/home';
 import { About } from "./pages/about";
 import { Apod } from "./pages/apod";
 import { Epic } from "./pages/epic";
+import './App.css'
+
+
 
 export default function App() {
   return (
