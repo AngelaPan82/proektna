@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import moment from "moment";
 import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
 
 import { Button,Col, Container, Image, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
@@ -58,6 +57,7 @@ export const Epic = () => {
             <DayPicker 
               selectedDays={ epicDayList.map( (dt) => ( moment(dt).toDate() ) ) }
               onDayClick={(dd) => handleDayClick(dd)}
+              numberOfMonths={1}
             />
           </Col>
           <Col>

@@ -7,6 +7,7 @@ import { About } from "./pages/about";
 import { Apod } from "./pages/apod";
 import { Epic } from "./pages/epic";
 import './App.css'
+import './DayPicker.css';
 
 
 export default function App() {

@@ -4,7 +4,6 @@ import { Card, Container } from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
 import moment from "moment";
 import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
 import  Video  from "../elements/youtube";
 
 export const Apod = () => {
