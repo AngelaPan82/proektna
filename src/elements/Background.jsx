@@ -8,8 +8,8 @@ export default function Background() {
             <video src="/videos/video-1.mp4" autoPlay loop muted />
             <h1>WELCOME</h1>
             <div className="background-btns">
-                <Button className='btns' buttonStyle='btn--outline'
-                    buttonSize='btn--large' to='/apod'>APOD</Button>
+                <Button className='btns' buttonStyle='btna--outline'
+                    buttonSize='btna--large' to='/apod'>APOD</Button>
 
             </div>
         </div>

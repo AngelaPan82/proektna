@@ -2,9 +2,9 @@ import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
 
-const STYLES = ['btn--primary', 'btn--outline']
+const STYLES = ['btna--primary', 'btna--outline']
 
-const SIZES = ['btn--medium', 'btn--large']
+const SIZES = ['btna--medium', 'btna--large']
 
 export const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0]
@@ -14,7 +14,7 @@ export const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => 
     return (
         <Link to='/Home' className='btn-mobile'>
             <button
-                className={`btn ${checkButtonStyle} ${checkButoonSize}`}
+                className={`btna ${checkButtonStyle} ${checkButoonSize}`}
                 onClick={onClick}
                 typle={type}
             >
