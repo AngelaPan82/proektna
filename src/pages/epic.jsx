@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import moment from "moment";
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
-import { Button, ButtonGroup, Col, Container, Dropdown, DropdownButton, Image, Row } from "react-bootstrap";
+import { Button,Col, Container, Image, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
+import ReactJson from "react-json-view";
 
+const imageBaseUrl = "https://epic.gsfc.nasa.gov/archive/natural/";
 export const Epic = () => {
   const { year = moment().format('YYYY'), month = moment().format('MM'), day=moment().format('DD'), ndx=0 } = useParams();
   
   const [epicDayList, setEpicDayList] = useState([]);
-  const [filtList, setFiltList] = useState([]);
   const [photoList, setPhotoList] = useState([]);
   
   const history = useHistory();
-  const historyPush = (yy, mm, dd, ii) => {
+  const historyPush = (yy, mm, dd, ii=1) => {
     history.push("/epic/" + yy + "/" + mm + "/" + dd + '/' + ii);
   };
 
-  const photoUri = (type,ndx) => {
+  const handleDayClick = (dd) => {
+    const date = moment(dd);
+    historyPush(date.format('YYYY'), date.format('MM'), date.format('DD'));
+  };
+
+  const photoUri = (pd,type,ndx) => {
     const ext = type==='png' ? '.png' : '.jpg'; 
     if(photoList[ndx]) 
-      return 'https://epic.gsfc.nasa.gov/archive/natural/' + year + '/' + month + '/' + day + '/'+type+'/epic_1b_' + photoList[ndx].identifier + ext;
+      return imageBaseUrl + year + '/' + month + '/' + day + '/'+type+'/' + pd.image + ext;
     return '';  
   };
 
@@ -32,10 +40,6 @@ export const Epic = () => {
   }, []);
 
   useEffect(() => {
-    setFiltList(epicDayList.filter(ym => ym.startsWith(year + '-' + month + '-')));
-  }, [year, month, epicDayList]);
-
-  useEffect(() => {
     axios.get('https://api.nasa.gov/EPIC/api/natural/date/' + year + '-' + month + '-' + day + '?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG')
       .then(res => {
         setPhotoList(res.data);
@@ -45,60 +49,42 @@ export const Epic = () => {
   return (
     <div>
 
-      <Container style={{ padding: '1em' }}>
+      <Container style={{ padding: '1em',  }}>
         <Row>
-          <Col>
-            <h1>EPIC images on {year + '-' + month + '-' + day}</h1>
-          </Col>
-          <Col>
-            <ButtonGroup>
-              <DropdownButton onSelect={(yy) => historyPush(yy,month,day, ndx)} as={ButtonGroup} title={"Year - " + year} id="bg-nested-dropdown">
-                <Dropdown.Item eventKey="2015">2015</Dropdown.Item>
-                <Dropdown.Item eventKey="2016">2016</Dropdown.Item>
-                <Dropdown.Item eventKey="2017">2017</Dropdown.Item>
-                <Dropdown.Item eventKey="2018">2018</Dropdown.Item>
-                <Dropdown.Item eventKey="2019">2019</Dropdown.Item>
-                <Dropdown.Item eventKey="2020">2020</Dropdown.Item>
-                <Dropdown.Item eventKey="2021">2021</Dropdown.Item>
-              </DropdownButton>
-              <DropdownButton onSelect={(mm) => historyPush(year, mm, day, ndx)} as={ButtonGroup} title={"month - " + month} id="bg-nested-dropdown">
-                <Dropdown.Item eventKey="01">January</Dropdown.Item>
-                <Dropdown.Item eventKey="02">February</Dropdown.Item>
-                <Dropdown.Item eventKey="03">March</Dropdown.Item>
-                <Dropdown.Item eventKey="04">April</Dropdown.Item>
-                <Dropdown.Item eventKey="05">May</Dropdown.Item>
-                <Dropdown.Item eventKey="06">June</Dropdown.Item>
-                <Dropdown.Item eventKey="07">July</Dropdown.Item>
-                <Dropdown.Item eventKey="08">August</Dropdown.Item>
-                <Dropdown.Item eventKey="09">September</Dropdown.Item>
-                <Dropdown.Item eventKey="10">October</Dropdown.Item>
-                <Dropdown.Item eventKey="11">November</Dropdown.Item>
-                <Dropdown.Item eventKey="12">December</Dropdown.Item>
-              </DropdownButton>
-              <DropdownButton onSelect={(dd) => historyPush(year,month,dd,ndx)} as={ButtonGroup} title={"day - " + day} id="bg-nested-dropdown">
-                {filtList.map((dd, key) => (
-                  <Dropdown.Item eventKey={dd.substr(dd.length - 2)} id={key}>
-                    {dd}
-                  </Dropdown.Item>
-                ))}
-              </DropdownButton>
-            </ButtonGroup>
-          </Col>
+          <h1>EPIC images on {year + '-' + month + '-' + day}</h1>
         </Row>
-        <Row style={{ paddingTop: '1em' }}>
+        <Row>
+         <Col>
+            <DayPicker 
+              selectedDays={ epicDayList.map( (dt) => ( moment(dt).toDate() ) ) }
+              onDayClick={(dd) => handleDayClick(dd)}
+            />
+          </Col>
           <Col>
           {photoList.map((pd, key) => (
-            <Button variant={ key!==ndx ? 'light' : 'primary'} style={{ padding: '0.4em' }} onClick={() => historyPush(year,month,day,key)} id={key}>
-              <Image src={photoUri('thumbs',key)} style={{ maxWidth: '60px' }} rounded />
-            </Button>
+          <Button 
+            variant={ key!==ndx ? 'light' : 'danger'} 
+            onClick={() => historyPush(year,month,day,key)} 
+            style={{ maxWidth: '60px', padding: 0, margin: '3px' }} 
+            key={key}
+          >
+              <Image 
+                src={ imageBaseUrl+year+'/'+month+'/'+day+'/thumbs/'+pd.image+'.jpg'} 
+                style={{ maxWidth: '60px', margin:'3px' }} 
+                rounded 
+              />
+              {/* <ReactJson src={pd} /> */}
+          </Button>
           ))}
         </Col>
         </Row>
         <Row style={{ paddingTop: '1em' }}>
           <Col>
-            <Button onClick={() => window.open(photoUri('png',ndx), '_blank')} variant="light" style={{ padding: '0.4em' }}>
-              <Image src={photoUri('jpg',ndx)} alt='Photo...' />
+          { photoList[ndx] &&
+            <Button onClick={() => window.open(imageBaseUrl+year+'/'+month+'/'+day+'/png/'+photoList[ndx].image+'.png', '_blank')} variant="light" style={{ padding: '0.4em' }}>
+              <Image src={imageBaseUrl+year+'/'+month+'/'+day+'/jpg/'+photoList[ndx].image+'.jpg'} alt='Photo...' />
             </Button>
+          }  
           </Col>
         </Row>
       </Container> 

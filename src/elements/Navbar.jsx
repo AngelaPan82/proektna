@@ -27,7 +27,7 @@ function Navbar() {
          <nav className="navbar">
              <div className="navbar-container">
                  <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                APAN <i class=" fas fa-globe-americas"></i>
+                APAN <i className=" fas fa-globe-americas"></i>
                  </Link>
                  <div className='menu-icon' onClick={handleClick}>
                      <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
