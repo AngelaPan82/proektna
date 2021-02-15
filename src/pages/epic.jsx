@@ -8,7 +8,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 const imageBaseUrl = "https://epic.gsfc.nasa.gov/archive/natural/";
 const dateFormat = 'YYYY-MM-DD';
-const rpl = (dt) => dt.replaceAll('-', '/'); // replace '-' whith '/' 
+const rpl = (dt) => dt.replaceAll('-', '/'); // replace '-' -> '/' 
 
 export const Epic = () => {
   const { datePar = moment().format(dateFormat), ndx } = useParams();
