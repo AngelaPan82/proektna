@@ -26,10 +26,10 @@ export default function App() {
           <Route path="/apod/">
             <Apod />
           </Route>
-          <Route path="/epic/:year/:month/:day/:ndx">
+          <Route path="/epic/:datePar/:ndx">
             <Epic />
           </Route>
-          <Route path="/epic/:year/:month/:day">
+          <Route path="/epic/:datePar">
             <Epic />
           </Route>
           <Route path="/epic">
