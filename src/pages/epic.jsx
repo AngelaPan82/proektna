@@ -21,11 +21,6 @@ export const Epic = () => {
     history.push("/epic/" + datePar + '/' + ii);
   };
 
-  const handleDayClick = (dd) => {
-    const date = moment(dd);
-    historyPush(date.format(dateFormat));
-  };
-
   useEffect(() => {
     axios.get(`https://api.nasa.gov/EPIC/api/natural/available?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`)
       .then(res => {
@@ -39,6 +34,11 @@ export const Epic = () => {
         setPhotoList(res.data);
       });
   }, [datePar]);
+
+  const handleDayClick = (dd) => {
+    const date = moment(dd);
+    historyPush(date.format(dateFormat));
+  };
 
   return (
     <div>
