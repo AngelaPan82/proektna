@@ -11,6 +11,8 @@ import './DayPicker.css';
 
 
 export default function App() {
+  document.title = "Проектна";
+
   return (
     <Router>
       <div>
