@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/apod/:year/:month/:day">
+          <Route path="/apod/:datePar">
             <Apod />
           </Route>
           <Route path="/apod/">
