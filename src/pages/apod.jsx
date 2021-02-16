@@ -7,27 +7,30 @@ import DayPicker from 'react-day-picker';
 import  Video  from "../elements/youtube";
 
 export const Apod = () => {
-  const { year = moment().format('YYYY'), month = moment().format('MM'), day = moment().format('DD') } = useParams();
+  const { datePar } = useParams();
   const [apodData, setApodData] = useState({});
-  const [selectedDay, setSelectedDay] = useState(moment(year + '-' + month + '-' + day).toDate());
+  const [selectedDay, setSelectedDay] = useState(moment(datePar).toDate());
 
   const history = useHistory();
-
+  
   const handleDayClick = (dd) => {
-    const date = moment(dd);
-    history.push("/apod/" + date.format('YYYY') + "/" + date.format('MM') + "/" + date.format('DD'));
-    setSelectedDay(date.toDate());
+    const dateStr = moment(dd).format('YYYY-MM-DD');
+    history.push("/apod/" + dateStr );
+    setSelectedDay(dateStr);
   };
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.nasa.gov/planetary/apod?date=` + year + `-` + month + `-` + day + `&api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`
-      )
-      .then((res) => {
-        setApodData(res.data);
-      });
-  }, [year, month, day]);
+    if(datePar===undefined)
+        history.push("/apod/" + moment().format('YYYY-MM-DD'));
+    else        
+        axios
+        .get(
+            `https://api.nasa.gov/planetary/apod?date=` + datePar + `&api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`
+        )
+        .then((res) => {
+            setApodData(res.data);
+        });
+  }, [datePar,history]);
 
   return (
     <Container>
