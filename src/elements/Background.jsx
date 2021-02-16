@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Logo from './logo';
 import './Background.css'
 
 const linkStyle = {
@@ -18,6 +19,7 @@ export default function Background() {
     return (
         <div className='background-container'>
             <video src="/videos/video-1.mp4" autoPlay loop muted />
+            <Logo />
             <h1>WELCOME</h1>
             <div>
                 <Link style={linkStyle} to='/apod'>APOD</Link>

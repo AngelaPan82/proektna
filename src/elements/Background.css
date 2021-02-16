@@ -1,3 +1,9 @@
+.apanLogo {
+    position: absolute;
+    top: 10%;
+    left: 2%
+}
+
 video {
     object-fit: cover;
     width: 100%;
