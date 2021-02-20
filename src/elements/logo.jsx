@@ -5,7 +5,7 @@ const Logo = () => {
   // Import result is the URL of your image
   return (
     <div className="apanLogo">
-      <img src={logo} alt="Logo" />;
+      <img src={logo} alt="Logo" />
     </div>
   )
 }
