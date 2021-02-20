@@ -12,7 +12,7 @@ yarn start
 ## Development tools and frameworks:
 
 - [VSCode](https://code.visualstudio.com/) main development IDE.
-- [Node.js]([Node.js](https://nodejs.org/en/)) development environment whit [Babel]() and [webpack](https://webpack.js.org).
+- [Node.js](https://nodejs.org/en/) development environment whit [Babel]() and [webpack](https://webpack.js.org).
 - Startup environment is created whith [create-react-app](https://github.com/facebook/create-react-app) .
 - [Axios](https://www.npmjs.com/package/axios) is used for fetching data from NASA services.
 - [react](https://reactjs.org/) A JavaScript library for building user interfaces
