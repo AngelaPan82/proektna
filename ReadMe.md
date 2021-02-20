@@ -1,21 +1,26 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/AngelaPan82/proektna)
+# React demo application for using NASA API
 
-## Live installation of the this Application
+### You can see this code in action here: [https://apan.sman.cloud](https://apan.sman.cloud)
 
-https://apan.sman.cloud
-
-## Cloning and running project to a local repository
-
+### Cloning and running project to a local repository
 ```sh
 git clone git@github.com:AngelaPan82/proektna.git <folder_name>
 yarn
 yarn start
 ```
-## Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Development tools and frameworks:
 
-## Available Scripts
+- [VSCode](https://code.visualstudio.com/) main development IDE.
+- [Node.js]([Node.js](https://nodejs.org/en/)) development environment whit [Babel]() and [webpack](https://webpack.js.org).
+- Startup environment is created whith [create-react-app](https://github.com/facebook/create-react-app) .
+- [Axios](https://www.npmjs.com/package/axios) is used for fetching data from NASA services.
+- [react](https://reactjs.org/) A JavaScript library for building user interfaces
+- [react-hooks](https://reactjs.org/docs/hooks-intro.html) as a new part of react.
+- [react-bootstrap](https://react-bootstrap.github.io/) is used for some design features.
+
+
+## Available Scripts, generated from create-react-app
 
 In the project directory, you can run:
 
@@ -52,32 +57,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
