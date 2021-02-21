@@ -65,7 +65,7 @@ useEffect(() => {
   }, []);
 ```
 
-###### And with this code list of image urls are fetched:
+##### And with this code list of image urls are fetched:
 
 ```jsx
 useEffect(() => {
@@ -76,4 +76,4 @@ useEffect(() => {
   }, [datePar]);
 ```
 
-###### And finaly render in to something like this:
+##### And finaly render in to something like this:
