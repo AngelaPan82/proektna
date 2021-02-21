@@ -31,4 +31,4 @@ useEffect(() => {
 
 In this piece of code, we fetch raw meta data from the service and transform (render) on the page.
 
-![APOD screen](screens/apod.jpg)
+![APOD screen](./screens/apod.jpg)
