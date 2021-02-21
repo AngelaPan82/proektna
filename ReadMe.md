@@ -37,7 +37,7 @@ We use just a couple, for now, NASA open APIs: APOD and EPIC.
 GET https://api.nasa.gov/planetary/apod
 ```
 
-In our code with useEffect hook:
+#### In our code with useEffect hook:
 
 ```jsx
 useEffect(() => {
@@ -50,8 +50,7 @@ useEffect(() => {
         });
   }, [datePar,history]);
 ```
-
-In this piece of code, we fetch raw meta data from the service and transform (render) on the page.
+#### In this piece of code, we fetch raw meta data from the service and transform (render) on the page.
 
 ![APOD screen](https://github.com/AngelaPan82/proektna/blob/master/screens/apod.jpg)
 
@@ -76,7 +75,7 @@ The following information is available for every image in the collection:
 - sun_j2000_position
 - attitude_quaternions
 
-##### In our application is used this request for fetching the list of dates whith EPIC image:
+#### In our application is used this request for fetching the list of dates whith EPIC image:
 
 ```js
 useEffect(() => {
@@ -87,7 +86,7 @@ useEffect(() => {
   }, []);
 ```
 
-##### And with this code list of image urls are fetched:
+#### And with this code list of image urls are fetched:
 
 ```jsx
 useEffect(() => {
@@ -98,6 +97,6 @@ useEffect(() => {
   }, [datePar]);
 ```
 
-##### And finaly render in to something like this:
+#### And finaly render in to something like this:
 
 ![EPIC screen](https://github.com/AngelaPan82/proektna/blob/master/screens/epic.jpg)
