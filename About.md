@@ -3,11 +3,13 @@
 The objective of this open API is to make NASA data, including imagery, eminently accessible to application developers.
 We use just a couple, for now, NASA open APIs: APOD and EPIC.
 
+
+
 ## APOD: Astronomy Picture of the Day
 
-One of the most popular websites at NASA is the Astronomy Picture of the Day. This website is one of the most popular websites across all federal agencies. This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. Also, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. These keywords could be used as auto-generated hashtags for Twitter or Instagram feeds, but generally help with the discoverability of relevant imagery.
+  One of the most popular websites at NASA is the Astronomy Picture of the Day. This website is one of the most popular websites across all federal agencies. This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. Also, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. These keywords could be used as auto-generated hashtags for Twitter or Instagram feeds, but generally help with the discoverability of relevant imagery.
 
-The full documentation for this API can be found in the [APOD API Github repository](https://github.com/nasa/apod-api).
+  The full documentation for this API can be found in the [APOD API Github repository](https://github.com/nasa/apod-api).
 
 #### HTTP Request
 
@@ -31,7 +33,9 @@ useEffect(() => {
 
 In this piece of code, we fetch raw meta data from the service and transform (render) on the page.
 
-##
+![APOD screen](https://github.com/AngelaPan82/proektna/blob/master/screens/apod.jpg)
+
+## 
 
 ## EPIC
 
@@ -39,7 +43,7 @@ The EPIC API provides information on the daily imagery collected by DSCOVR's Ear
 
 Image metadata and key information are provided by the JSON API and can be requested by date and for the most recent available date. A listing of all available dates can also be retrieved via the API for more granular control.
 
-Development of the EPIC API began in 2015, and is supported by the web development team for the [Laboratory for Atmospheres](http://atmospheres.gsfc.nasa.gov/) in the Earth Sciences Division of the Goddard Space Flight Center. More information regarding the API and retrieval of the imagery for download can be found on the [EPIC website](http://epic.gsfc.nasa.gov/).
+Development of the EPIC API began in 2015, and is supported by the web development team for the [Laboratory for Atmospheres](http://atmospheres.gsfc.nasa.gov/) in the Earth Sciences Division of the Goddard Space Flight Center. More information regarding the API and retrieval of the imagery for download can be found on the [EPIC website](http://epic.gsfc.nasa.gov/).
 
 ### Retrievable Metadata
 
@@ -53,8 +57,10 @@ The following information is available for every image in the collection:
 - lunar_j2000_position
 - sun_j2000_position
 - attitude_quaternions
+  
+  
 
-##### In our application is used this request for fetching the list of dates whith EPIC image:
+###### In our application is used this request for fetching the list of dates whith EPIC image:
 
 ```js
 useEffect(() => {
@@ -65,7 +71,9 @@ useEffect(() => {
   }, []);
 ```
 
-##### And with this code list of image urls are fetched:
+###### And with this code list of image urls are fetched:
+
+
 
 ```jsx
 useEffect(() => {
@@ -76,4 +84,6 @@ useEffect(() => {
   }, [datePar]);
 ```
 
-##### And finaly render in to something like this:
+###### And finaly render in to something like this:
+
+![EPIC screen](https://github.com/AngelaPan82/proektna/blob/master/screens/epic.jpg)
