@@ -102,7 +102,7 @@ useEffect(() => {
 ![EPIC screen](https://github.com/AngelaPan82/proektna/blob/master/screens/epic.jpg)
 
 
-## This last part of readme.md is automaticaly generated with create-react-app
+## This last part of readme.md is automatically generated with create-react-app
 
 ### Available Scripts, generated from create-react-app
 
