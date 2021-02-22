@@ -34,6 +34,11 @@ function Navbar() {
                              APOD
                          </Link>
                      </li>
+                     <li className='nav-item'>
+                         <Link to='/nasatwitt' className='nav-links' onClick={closeMobileMenu}>
+                             NASA Twitts
+                         </Link>
+                     </li>
                  </ul>
                 
              </div>
