@@ -7,7 +7,7 @@ export const NasaTwitt = () => {
   const { tlName = "NASA" } = useParams();
   const history = useHistory();
 
-  const handleClick = (ur) => { history.push(ur) };
+  const handleClick = (ur) => { history.push('twitter/'+ur) };
  
   const Twitko = () => (
     <TwitterTimelineEmbed
