@@ -19,6 +19,12 @@ export default function App() {
         <Navbar />
 
         <Switch>
+          <Route path="/nasatwitt/:tlName">
+            <NasaTwitt />
+          </Route> 
+          <Route path="/nasatwitt">
+            <NasaTwitt />
+          </Route> 
           <Route path="/about">
             <About />
           </Route>
