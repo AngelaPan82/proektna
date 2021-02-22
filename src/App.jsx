@@ -47,6 +47,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+    
       </div>
     </Router>
   );
