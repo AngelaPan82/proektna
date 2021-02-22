@@ -35,7 +35,7 @@ function Navbar() {
                          </Link>
                      </li>
                      <li className='nav-item'>
-                         <Link to='/nasatwitt' className='nav-links' onClick={closeMobileMenu}>
+                         <Link to='/twitter' className='nav-links' onClick={closeMobileMenu}>
                              NASA Twitts
                          </Link>
                      </li>
