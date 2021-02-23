@@ -25,8 +25,10 @@ export const NasaTwitt = () => {
         <Col xs lg="2">
           <Card style={{ padding: 6 }}>
             <Button block variant="dark" onClick={() => handleClick('NASA')}>NASA</Button>
-            <Button block variant="dark" onClick={() => handleClick('NASAPersevere')}>NASAPersevere</Button>
-            <Button block variant="dark" onClick={() => handleClick('NASAJPL')}>NASAJPL</Button>
+            <Button block variant="dark" onClick={() => handleClick('NASAJPL')}>JPL</Button>
+            <Button block variant="dark" onClick={() => handleClick('NASAPersevere')}>Perseverance</Button>
+            <Button block variant="dark" onClick={() => handleClick('NASA_Astronauts')}>Astronauts</Button>
+            <Button block variant="dark" onClick={() => handleClick('NASAEarth')}>Earth</Button>
           </Card>
         </Col>
         <Col lg="10">
