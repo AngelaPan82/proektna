@@ -6,9 +6,10 @@ import Home from './pages/home';
 import { About } from "./pages/about";
 import { Apod } from "./pages/apod";
 import { Epic } from "./pages/epic";
+import { NasaTwitt } from "./pages/twitter";
+
 import './App.css'
 import './DayPicker.css';
-
 
 export default function App() {
   document.title = "Проектна";
@@ -19,6 +20,12 @@ export default function App() {
         <Navbar />
 
         <Switch>
+          <Route path="/twitter/:tlName">
+            <NasaTwitt />
+          </Route> 
+          <Route path="/twitter">
+            <NasaTwitt />
+          </Route> 
           <Route path="/about">
             <About />
           </Route>
@@ -41,6 +48,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+    
       </div>
     </Router>
   );
