@@ -7,13 +7,13 @@ export const NasaTwitt = () => {
   const { tlName = "NASA" } = useParams();
   const history = useHistory();
 
-  const handleClick = (ur) => { history.push('twitter/'+ur) };
+  const handleClick = (ur) => { history.push("/twitter/" + ur) };
  
   const Twitko = () => (
     <TwitterTimelineEmbed
       sourceType="profile"
       screenName={tlName}
-      options={{ width: 640 }}
+      options={{ height: window.innerHeight-100 }}
       theme="dark"
     />
   );
@@ -29,12 +29,8 @@ export const NasaTwitt = () => {
             <Button block variant="dark" onClick={() => handleClick('NASAJPL')}>NASAJPL</Button>
           </Card>
         </Col>
-        <Col md="auto" style={{ minWith: 640 }}>
-          <Card>
-            <Card.Body style={{ padding: 0 }}>
+        <Col lg="10">
               <Twitko />
-            </Card.Body>
-          </Card>
         </Col>
         <Col xs lg="2">
 
