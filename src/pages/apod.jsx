@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Container } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
 import moment from "moment";
 import DayPicker from 'react-day-picker';
 import  Video  from "../elements/youtube";
+import { TextModal } from "../elements/textModal";
 
 export const Apod = () => {
+  const [show, setShow] = useState(false);
   const { datePar } = useParams();
   const [apodData, setApodData] = useState({});
   const [selectedDay, setSelectedDay] = useState(moment(datePar).toDate());
@@ -40,6 +42,11 @@ export const Apod = () => {
         selectedDays={selectedDay}
         onDayClick={(dd) => handleDayClick(dd)}
       />
+
+      <Button variant="primary" onClick={() => setShow(true)}>
+        About APOD
+        </Button>
+      <TextModal id='apod' show={show} onClick={() => setShow(false)} />
 
       { apodData.media_type === "image" ?
         <Card className="bg-dark text-white">
