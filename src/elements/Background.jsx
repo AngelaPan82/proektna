@@ -1,29 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Logo from './logo';
+import { Button } from 'react-bootstrap';
+import { TextModal } from './textModal';
 import './Background.css'
 
-const linkStyle = {
-    borderStyle: "solid",
-    borderWidth: '0.2em', 
-    borderColor: "white",
-    padding: '1em',
-    margin: '1em',
-    color: 'white',
-    textDecoration: 'none',
-    borderRadius:'5px',
-    textWeight: 'bold'
-}
-
 export default function Background() {
+    const [show, setShow] = useState(false);
+
     return (
         <div className='background-container'>
             <video src="/videos/video-1.mp4" autoPlay loop muted />
             <Logo />
             <h1>WELCOME</h1>
             <div>
-                <Link style={linkStyle} to='/apod'>APOD</Link>
-                <Link style={linkStyle} to='/epic'>EPIC</Link>
+                <Link size="lg" className="btn btn-outline-secondary btn-lg" to='/apod'>APOD</Link>
+                <Link size="lg" className="btn btn-outline-secondary btn-lg" to='/epic'>EPIC</Link>
+                <Button size="lg" variant="outline-secondary" onClick={() => setShow(true)}>
+                    About Us
+                </Button>
+                <TextModal id='aboutUs' show={show} onClick={() => setShow(false)} />
             </div>
         </div>
     );

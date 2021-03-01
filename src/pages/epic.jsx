@@ -4,12 +4,14 @@ import moment from "moment";
 import DayPicker from 'react-day-picker';
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
+import { TextModal } from "../elements/textModal";
 
 const imageBaseUrl = "https://epic.gsfc.nasa.gov/archive/natural/";
 const dateFormat = 'YYYY-MM-DD';
 const rpl = (dt) => dt.replaceAll('-', '/'); // replace '-' -> '/' 
 
 export const Epic = () => {
+  const [show, setShow] = useState(false);
   const { datePar = moment().format(dateFormat), ndx } = useParams();
 
   const [epicDayList, setEpicDayList] = useState([]);
@@ -43,9 +45,20 @@ export const Epic = () => {
     <div>
 
       <Container style={{ padding: '1em', }}>
+
         <Row>
-          <h1>EPIC images on {datePar}</h1>
+          <Col>
+            <h1>EPIC images on {datePar}</h1>
+          </Col>
+          
+          <Col>
+            <Button variant="primary" onClick={() => setShow(true)}>
+              About EPIC
+            </Button>
+            <TextModal id='epic' show={show} onClick={() => setShow(false)} />
+          </Col>
         </Row>
+
         <Row>
           <Col>
             <DayPicker
