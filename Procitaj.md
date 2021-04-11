@@ -1,4 +1,4 @@
-# React demo application for using NASA API
+# React демо апликација за користење НАСА АПИ
 
 ## Цел на апликацијата
 
@@ -31,13 +31,13 @@
 
   Целосната документација за овие API може да се најде во [APOD API Github repository](https://github.com/nasa/apod-api).
 
-#### HTTP Request
+#### HTTP Request 
 
 ```sh
 GET https://api.nasa.gov/planetary/apod
 ```
 
-#### In our code with useEffect hook:
+#### Со помош на useEffect hook:
 
 ```jsx
 useEffect(() => {
@@ -50,21 +50,21 @@ useEffect(() => {
         });
   }, [datePar,history]);
 ```
-#### In this piece of code, we fetch raw meta data from the service and transform (render) on the page.
+#### Во овој дел од кодот, ние примаме необработени мета-податоци од АПО-то и ги трансформираме (прикажуваме) на страницата.
 
 ![APOD screen](https://github.com/AngelaPan82/proektna/blob/master/screens/apod.jpg)
 
 ## EPIC
 
-The EPIC API provides information on the daily imagery collected by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument. Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.
+EPIC API обезбедува информации за дневните слики собрани од инструментот Earth Polychromatic Imaging Camera (EPIC) на DSCOVR. Единствено поставена на точката Земја-Сонце Лагранџ, EPIC обезбедува целосна слика на дисковите на Земјата и снима уникатни перспективи на одредени астрономски настани, како што се месечински транзити со помош на детектор 2048x2048 пиксели CCD (уред со полнење на полнење), споен со телескоп Касегреин со отвор од 30 см .
 
-Image metadata and key information are provided by the JSON API and can be requested by date and for the most recent available date. A listing of all available dates can also be retrieved via the API for more granular control.
+Метаподатоците за слика и клучните информации се обезбедени од JSON API и може да се побараат според датумот и за најновиот достапен датум. Список на сите достапни датуми, исто така, може да се добие преку API за повеќе грануларна контрола.
 
-Development of the EPIC API began in 2015, and is supported by the web development team for the [Laboratory for Atmospheres](http://atmospheres.gsfc.nasa.gov/) in the Earth Sciences Division of the Goddard Space Flight Center. More information regarding the API and retrieval of the imagery for download can be found on the [EPIC website](http://epic.gsfc.nasa.gov/).
+Развојот на EPIC API започна во 2015 година и е поддржан од тимот за развој на веб-страници за [Лабораторија за атмосфери] (http://atmospheres.gsfc.nasa.gov/) во одделот за науки за земјата на Центарот за вселенски летови на Годард. Повеќе информации во врска со API и преземањето на сликите за преземање може да најдете на [веб-страницата EPIC] (http://epic.gsfc.nasa.gov/).
 
-### Retrievable Metadata
+### Метаподатоци за обновување
 
-The following information is available for every image in the collection:
+Следниве информации се достапни за секоја слика во колекцијата:
 
 - Image [name]
 - Date
@@ -75,7 +75,7 @@ The following information is available for every image in the collection:
 - sun_j2000_position
 - attitude_quaternions
 
-#### In our application is used this request for fetching the list of dates whith EPIC image:
+#### Во нашата апликација се користи ова барање за преземање на списокот со датуми со ЕПС-слика:
 
 ```js
 useEffect(() => {
@@ -86,7 +86,7 @@ useEffect(() => {
   }, []);
 ```
 
-#### And with this code list of image urls are fetched:
+#### И со овој код список на адреси на слики се преземени:
 
 ```jsx
 useEffect(() => {
@@ -97,21 +97,21 @@ useEffect(() => {
   }, [datePar]);
 ```
 
-#### And finaly render in to something like this:
+#### И, конечно, претстави во вакво нешто:
 
 ![EPIC screen](https://github.com/AngelaPan82/proektna/blob/master/screens/epic.jpg)
 
 
-## This last part of readme.md is automatically generated with create-react-app
+## Овој последен дел од rocitaj.md автоматски се генерира со create-react-app:
 
-### Available Scripts, generated from create-react-app
+### Достапни скрипти, генерирани од create-react-app
 
-In the project directory, you can run:
+Во директориумот на проектот, можете да извршите:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ја извршува апликацијата во режим на развој.\
+Отвори [http://localhost:3000](http://localhost:3000) во прелистувач.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
