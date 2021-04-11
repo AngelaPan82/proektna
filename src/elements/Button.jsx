@@ -1,7 +1,9 @@
 import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
-
+//
+// gotova komponenta prevzemena od bootstrap tutorial
+//
 const STYLES = ['btna--primary', 'btna--outline']
 
 const SIZES = ['btna--medium', 'btna--large']
