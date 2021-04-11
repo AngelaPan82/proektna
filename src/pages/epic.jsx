@@ -42,6 +42,9 @@ export const Epic = () => {
       });
   }, [datePar]);
 
+  // zakacalka, racka koja se povikuva koga e kliknato na den od kalendarot
+  // datumot se turka se dodava vo url-to a koga ke se smeni urlto avtomatski se pogorniot useEffect i se prevzemaaat podatocite
+  // za lokaciite (url) na slikite vo photolist variablata
   const handleDayClick = (dd) => {
     const date = moment(dd);
     historyPush(date.format(dateFormat));
