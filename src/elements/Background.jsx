@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Logo from './logo';
-import { Button } from 'react-bootstrap';
 import { TextModal } from './textModal';
 import './Background.css'
 
@@ -16,9 +15,7 @@ export default function Background() {
             <div>
                 <Link size="lg" className="btn btn-outline-secondary btn-lg" to='/apod'>APOD</Link>
                 <Link size="lg" className="btn btn-outline-secondary btn-lg" to='/epic'>EPIC</Link>
-                <Button size="lg" variant="outline-secondary" onClick={() => setShow(true)}>
-                    About Us
-                </Button>
+                <Link size="lg" className="btn btn-outline-secondary btn-lg" to='/about'>About Us</Link>
                 <TextModal id='aboutUs' show={show} onClick={() => setShow(false)} />
             </div>
         </div>

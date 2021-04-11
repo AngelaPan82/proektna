@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 
 const axParam = {
 					// Link to About.md on github repositories 
@@ -14,7 +14,7 @@ const axParam = {
 const axi = axios.create(axParam);
   
 export const About = () =>{
-	const [rdm, setRdm] = useState('Read-me.md');
+	const [rdm, setRdm] = useState('Loading Abnout.md');
 	
 	useEffect(() => {
 		axi.get()
@@ -27,8 +27,10 @@ export const About = () =>{
 	},[]);
 
 	return(
-		<Container style={{marginTop:"1.5em"}}>
+		<Container style={{ display: "flex", flexWrap: "wrap",alignContent: "center", maxWidth:"800px" }}>
+			<Card style={{marginTop:"1.5em", padding: "3em"}}>
 				<ReactMarkdown source={rdm} />
+			 </Card>
 		</Container>
 	)
 }
