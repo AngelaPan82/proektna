@@ -46,12 +46,10 @@ export const Epic = () => {
     <div>
 
       <Container style={{ padding: '1em', }}>
-
         <Row>
           <Col>
             <h1>EPIC images on {datePar}</h1>
           </Col>
-          
           <Col>
             <Button variant="primary" onClick={() => setShow(true)}>
               About EPIC
@@ -59,7 +57,6 @@ export const Epic = () => {
             <TextModal id='epic' show={show} onClick={() => setShow(false)} />
           </Col>
         </Row>
-
         <Row>
           <Col>
             <DayPicker
