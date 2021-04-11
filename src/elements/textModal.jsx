@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 import { Button, Modal } from "react-bootstrap";
-
+// 
+// tekstovite koi se pojavuvaat vo panel na dugme
+//
 const textFiles = {
   apod: '../text/AboutAPOD.md',
   epic: '../text/AboutEPIC.md',
