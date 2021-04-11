@@ -10,7 +10,9 @@ import { NasaTwitt } from "./pages/twitter";
 
 import './App.css'
 import './DayPicker.css';
-
+//
+// glaven Modul najprvo se povikuva ovaa funkcija od Index.js
+//
 export default function App() {
   document.title = "Проектна";
 
@@ -18,7 +20,7 @@ export default function App() {
     <Router>
       <div>
         <Navbar />
-
+       // ova se site ruti (lokacii) koj se pojavuvaat brouserot
         <Switch>
           <Route path="/twitter/:tlName">
             <NasaTwitt />
