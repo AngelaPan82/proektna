@@ -20,7 +20,7 @@ export default function App() {
     <Router>
       <div>
         <Navbar />
-       // ova se site ruti (lokacii) koj se pojavuvaat brouserot
+    { // ova se site ruti (lokacii) koj se pojavuvaat brouserot }
         <Switch>
           <Route path="/twitter/:tlName">
             <NasaTwitt />
