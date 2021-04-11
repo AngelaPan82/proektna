@@ -7,8 +7,9 @@ import DayPicker from 'react-day-picker';
 import  Video  from "../elements/youtube";
 import { TextModal } from "../elements/textModal";
 import GitText from "../elements/GitTextLoader";
- 
-
+// 
+// Ova e funkcijata (komponenta) koja ja prikazuva APOD stranata
+//
 export const Apod = () => {
   const [show, setShow] = useState(false);
   const { datePar } = useParams();
@@ -25,7 +26,7 @@ export const Apod = () => {
   useEffect(() => {
     if(datePar===undefined)
         history.push("/apod/" + moment().format('YYYY-MM-DD'));
-    else        
+    else    // tuka se prezema podatocite od API-to spored datumot   
         axios
         .get(
             `https://api.nasa.gov/planetary/apod?date=` + datePar + `&api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`
