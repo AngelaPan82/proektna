@@ -10,7 +10,9 @@ import GitText from "../elements/GitTextLoader";
 const imageBaseUrl = "https://epic.gsfc.nasa.gov/archive/natural/";
 const dateFormat = 'YYYY-MM-DD';
 const rpl = (dt) => dt.replaceAll('-', '/'); // replace '-' -> '/' 
-
+//
+// Epic komponenta ova e funkcija za epic servisot
+//
 export const Epic = () => {
   const [show, setShow] = useState(false);
   const { datePar = moment().format(dateFormat), ndx } = useParams();
@@ -24,13 +26,16 @@ export const Epic = () => {
   };
 
   useEffect(() => {
+    // so ovoj rekvest se prezema lista na denovi za koi ima fotografii na zemjata
     axios.get(`https://api.nasa.gov/EPIC/api/natural/available?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG`)
       .then(res => {
         setEpicDayList(res.data);
       });
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { 
+    // ovdeka koga e izbran datumot od plavite se prevzemaat podatocite za toj datum, spisokot na linkovi za slikite
+    // so sekoj rekvest se praka i api_key
     axios.get('https://api.nasa.gov/EPIC/api/natural/date/' + datePar + '?api_key=zLcj2YQqAcjw4XMvcJPgZUtlbReqV1MonlwC8iqG')
       .then(res => {
         setPhotoList(res.data);
