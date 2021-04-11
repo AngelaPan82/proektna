@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import Logo from './logo';
 import { TextModal } from './textModal';
 import './Background.css'
-
+//
+// ovdeka e pozadinata na glavnot (Home) ekran
+//
 export default function Background() {
     const [show, setShow] = useState(false);
 
