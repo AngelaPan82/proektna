@@ -1,3 +1,4 @@
+// ovaa e avtomatski generirano i ne se cepka
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
