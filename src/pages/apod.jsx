@@ -7,13 +7,13 @@ import DayPicker from 'react-day-picker';
 import  Video  from "../elements/youtube";
 import { TextModal } from "../elements/textModal";
 import GitText from "../elements/GitTextLoader";
+ 
 
 export const Apod = () => {
   const [show, setShow] = useState(false);
   const { datePar } = useParams();
   const [apodData, setApodData] = useState({});
   const [selectedDay, setSelectedDay] = useState(moment(datePar).toDate());
-
   const history = useHistory();
   
   const handleDayClick = (dd) => {
