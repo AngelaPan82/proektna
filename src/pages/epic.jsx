@@ -5,6 +5,7 @@ import DayPicker from 'react-day-picker';
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { TextModal } from "../elements/textModal";
+import GitText from "../elements/GitTextLoader";
 
 const imageBaseUrl = "https://epic.gsfc.nasa.gov/archive/natural/";
 const dateFormat = 'YYYY-MM-DD';
@@ -92,6 +93,9 @@ export const Epic = () => {
               </Button>
             }
           </Col>
+        </Row>
+        <Row>
+          <GitText textFile={"AboutEPIC.md"} />
         </Row>
       </Container>
 

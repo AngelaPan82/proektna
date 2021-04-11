@@ -6,6 +6,7 @@ import moment from "moment";
 import DayPicker from 'react-day-picker';
 import  Video  from "../elements/youtube";
 import { TextModal } from "../elements/textModal";
+import GitText from "../elements/GitTextLoader";
 
 export const Apod = () => {
   const [show, setShow] = useState(false);
@@ -70,7 +71,7 @@ export const Apod = () => {
           </Card.Footer>
         </Card>
       }
-
+      <GitText textFile={"AboutAPOD.md"} />
     </Container>
   );
 };
