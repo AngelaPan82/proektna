@@ -22,7 +22,7 @@ export const NasaTwitt = () => {
 
     <Container style={{ paddingTop: 6 }}>
       <Row className="justify-content-md-center">
-        <Col xs lg="2">
+        <Col xs lg="4">
           <Card style={{ padding: 6 }}>
             <Button block variant="dark" onClick={() => handleClick('NASA')}>NASA</Button>
             <Button block variant="dark" onClick={() => handleClick('NASAJPL')}>JPL</Button>
@@ -31,10 +31,10 @@ export const NasaTwitt = () => {
             <Button block variant="dark" onClick={() => handleClick('NASAEarth')}>Earth</Button>
           </Card>
         </Col>
-        <Col lg="10">
+        <Col lg="6">
               <Twitko />
         </Col>
-        <Col xs lg="2">
+        <Col xs lg="4">
 
         </Col>
       </Row>
